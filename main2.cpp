@@ -82,39 +82,39 @@ public:
 };
 
 int TicketOrder::AgeCalculation() {
-    //ÁÖ¹Î¹øÈ£·ÎºÎÅÍ ÃßÃâ
-    // 1-6¹øÂ° ÀÚ¸® ÃßÃâ
+    //ï¿½Ö¹Î¹ï¿½È£ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // 1-6ï¿½ï¿½Â° ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½
     std::string first_six_digits = input_num.substr(0, 6);
 
-    // 7¹øÂ° ÀÚ¸® ÃßÃâ
+    // 7ï¿½ï¿½Â° ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½
     std::string seventh_digit = input_num.substr(6, 1);
 
-    std::cout << "1-6¹øÂ° ÀÚ¸®: " << first_six_digits << std::endl;
-    std::cout << "7¹øÂ° ÀÚ¸®: " << seventh_digit << std::endl;
+    std::cout << "1-6ï¿½ï¿½Â° ï¿½Ú¸ï¿½: " << first_six_digits << std::endl;
+    std::cout << "7ï¿½ï¿½Â° ï¿½Ú¸ï¿½: " << seventh_digit << std::endl;
 
 
-    //int·Î º¯È¯ std::stoi
+    //intï¿½ï¿½ ï¿½ï¿½È¯ std::stoi
     int age_calc_1to6 = stoi(first_six_digits);
-    int age_calc_7th = stoi(seventh_digit); //³²³à,¿¬µµ°è»ê1 2 3 4  if age_calc_7th == 1 || age_calc_7th == 
+    int age_calc_7th = stoi(seventh_digit); //ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1 2 3 4  if age_calc_7th == 1 || age_calc_7th == 
 
-    // ÇöÀç ½Ã°£ ¾ò±â
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½
     std::time_t now = std::time(nullptr);
 
-    // std::time_t Çü½ÄÀÇ ÇöÀç ½Ã°£À» std::tm ±¸Á¶Ã¼·Î º¯È¯
+    // std::time_t ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ std::tm ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È¯
     std::tm* local_time = std::localtime(&now);
 
-    // ³âµµ, ¿ù, ÀÏ¿¡ ÇØ´çÇÏ´Â ºÎºÐÀ» ÃßÃâÇÏ¿© ¹®ÀÚ¿­·Î ¸¸µé±â
+    // ï¿½âµµ, ï¿½ï¿½, ï¿½Ï¿ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     std::stringstream ss;
-    ss << std::put_time(local_time, "%Y%m%d"); // YYYYMMDD Çü½ÄÀ¸·Î Ãâ·Â
+    ss << std::put_time(local_time, "%Y%m%d"); // YYYYMMDD ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     std::string date_str = ss.str();
 
-    // µÚÀÇ yyMMdd ºÎºÐ¸¸ Àß¶ó³»±â
+    // ï¿½ï¿½ï¿½ï¿½ yyMMdd ï¿½ÎºÐ¸ï¿½ ï¿½ß¶ó³»±ï¿½
     std::string yyMMdd = date_str.substr(2);
 
-    // int·Î º¯È¯
+    // intï¿½ï¿½ ï¿½ï¿½È¯
     int yyMMdd_int = std::stoi(yyMMdd);
 
-    // °á°ú Ãâ·Â
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     std::cout << "yyMMdd: " << yyMMdd << std::endl;
     std::cout << "yyMMdd (int): " << yyMMdd_int << std::endl;
 
@@ -126,14 +126,14 @@ int TicketOrder::AgeCalculation() {
         age_yyMMdd = yyMMdd_int - age_calc_1to6;
     }
 
-    //age_yyMMDD -> age_yy ÇüÅÂ·Î º¯È¯
-    std::string age_yy_str = std::to_string(age_yyMMdd).substr(0, 2); // ³âµµ ºÎºÐ¸¸ ÃßÃâ
+    //age_yyMMDD -> age_yy ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½È¯
+    std::string age_yy_str = std::to_string(age_yyMMdd).substr(0, 2); // ï¿½âµµ ï¿½ÎºÐ¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    int age_yy = std::stoi(age_yy_str); // int·Î º¯È¯
+    int age_yy = std::stoi(age_yy_str); // intï¿½ï¿½ ï¿½ï¿½È¯
 
     std::cout << "age: " << age_yy << std::endl;
 
-    //age_yy ¹üÀ§ ÁöÁ¤
+    //age_yy ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     if (ticket_price = daytime_price) {
         if (age_yy >= 0 && age_yy <= 2) {
             ticket_price = daytime_age_2;
@@ -178,8 +178,8 @@ int TicketOrder::AgeCalculation() {
 
 
 TicketOrder::TicketOrder() {
-    cout << "1. ÁÖ°£±Ç" << endl;
-    cout << "2. ¾ß°£±Ç" << endl;
+    cout << "1. ï¿½Ö°ï¿½ï¿½ï¿½" << endl;
+    cout << "2. ï¿½ß°ï¿½ï¿½ï¿½" << endl;
 
     for (;;) {
         cin >> input_num;
@@ -192,36 +192,36 @@ TicketOrder::TicketOrder() {
             break;
         }
         else {
-            cout << "´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+            cout << "ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
         }
     }
 
 
-    //ÁÖ¹Î¹øÈ£ ÀÔ·Â
-    cout << "ÁÖ¹Î¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+    //ï¿½Ö¹Î¹ï¿½È£ ï¿½Ô·ï¿½
+    cout << "ï¿½Ö¹Î¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
     for (;;) {
         cin >> input_num;
         if (input_num.length() == 13) {
-            //age°è»ê ÇÔ¼ö È£Ãâ
+            //ageï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ È£ï¿½ï¿½
             TicketOrder::AgeCalculation();
-            cout << "ÁÖ¹Î¹øÈ£: " << input_num << endl;
+            cout << "ï¿½Ö¹Î¹ï¿½È£: " << input_num << endl;
             break;
         }
         else {
-            cout << "ÁÖ¹Î¹øÈ£¸¦ ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+            cout << "ï¿½Ö¹Î¹ï¿½È£ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
         }
     }
 
 
-    //ÁÖ¹®°³¼ö
-    cout << "¸î °³¸¦ ÁÖ¹®ÇÏ½Ã°Ú½À´Ï±î? (ÃÖ´ë 10°³)" << endl;
+    //ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½
+    cout << "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¹ï¿½ï¿½Ï½Ã°Ú½ï¿½ï¿½Ï±ï¿½? (ï¿½Ö´ï¿½ 10ï¿½ï¿½)" << endl;
     for (;;) {
         cin >> input_num;
-        //int·Î º¯È¯ std::stoi
+        //intï¿½ï¿½ ï¿½ï¿½È¯ std::stoi
         amount_ticket = stoi(input_num);
 
         if (amount_ticket > 0 && amount_ticket < 11) {
-            //ÃÖÁ¾°¡°Ý °è»ê   
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½   
             total_price = ticket_price * amount_ticket;
 
             cout << ticket_price << endl;
@@ -230,24 +230,24 @@ TicketOrder::TicketOrder() {
             break;
         }
         else {
-            cout << "¼ö·®À» ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+            cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
         }
     }
 
 
-    //¿ì´ë»çÇ× ÀÔ·Â
-    cout << "¿ì´ë»çÇ×À» ¼±ÅÃÇÏ¼¼¿ä" << endl;
-    cout << "1. ¾øÀ½ (³ªÀÌ ¿ì´ë´Â ÀÚµ¿ Ã³¸®" << endl;
-    cout << "2. Àå¾ÖÀÎ" << endl;
-    cout << "3. ±¹°¡À¯°øÀÚ" << endl;
-    cout << "4. ´ÙÀÚ³à" << endl;
-    cout << "5. ÀÓ»êºÎ" << endl;
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
+    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
+    cout << "1. ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ Ã³ï¿½ï¿½" << endl;
+    cout << "2. ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+    cout << "3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+    cout << "4. ï¿½ï¿½ï¿½Ú³ï¿½" << endl;
+    cout << "5. ï¿½Ó»ï¿½ï¿½" << endl;
 
     for (;;) {
         cin >> input_num;
         if (input_num == "1") {
-            cout << "1. ¾øÀ½ (³ªÀÌ ¿ì´ë´Â ÀÚµ¿ Ã³¸®" << endl;
-            //¿ì´ë»çÇ× ÇÔ¼ö 
+            cout << "1. ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ Ã³ï¿½ï¿½" << endl;
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ 
             discount_price = 1.0;
             total_price = total_price * discount_price;
             cout << total_price << endl;
@@ -255,8 +255,8 @@ TicketOrder::TicketOrder() {
             break;
         }
         else if (input_num == "2") {
-            cout << "2. Àå¾ÖÀÎ" << endl;
-            //¿ì´ë»çÇ× ÇÔ¼ö
+            cout << "2. ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
             discount_price = 0.6;
             total_price = total_price * discount_price;
             cout << total_price << endl;
@@ -264,8 +264,8 @@ TicketOrder::TicketOrder() {
             break;
         }
         else if (input_num == "3") {
-            cout << "3. ±¹°¡À¯°øÀÚ" << endl;
-            //¿ì´ë»çÇ× ÇÔ¼ö
+            cout << "3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
             discount_price = 0.5;
             total_price = total_price * discount_price;
             cout << total_price << endl;
@@ -273,8 +273,8 @@ TicketOrder::TicketOrder() {
             break;
         }
         else if (input_num == "4") {
-            cout << "4. ´ÙÀÚ³à" << endl;
-            //¿ì´ë»çÇ× ÇÔ¼ö
+            cout << "4. ï¿½ï¿½ï¿½Ú³ï¿½" << endl;
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
             discount_price = 0.8;
             total_price = total_price * discount_price;
             cout << total_price << endl;
@@ -282,8 +282,8 @@ TicketOrder::TicketOrder() {
             break;
         }
         else if (input_num == "5") {
-            cout << "5. ÀÓ»êºÎ" << endl;
-            //¿ì´ë»çÇ× ÇÔ¼ö
+            cout << "5. ï¿½Ó»ï¿½ï¿½" << endl;
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
             discount_price = 0.85;
             total_price = total_price * discount_price;
             cout << total_price << endl;
@@ -291,14 +291,14 @@ TicketOrder::TicketOrder() {
             break;
         }
         else {
-            cout << "´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä" << endl;
+            cout << "ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½" << endl;
         }
     }
 
 
 
-    //ÃÖÁ¾ °¡°ÝÀº @@ÀÔ´Ï´Ù
-    cout << "ÃÖÁ¾ °¡°ÝÀº " << total_price << "¿ø" << endl;
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ @@ï¿½Ô´Ï´ï¿½
+    cout << "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " << total_price << "ï¿½ï¿½" << endl;
 
 
 
@@ -310,28 +310,28 @@ TicketOrder::TicketOrder() {
 *
 * class TicketOrder {
 private:
-    // ¸â¹ö º¯¼ö ¼±¾ð
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     Customer customer;
     Ticket ticket;
     Order order;
 
 public:
-    // »ý¼ºÀÚ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     TicketOrder();
 
-    // ÁÖ¹Î¹øÈ£ ÀÔ·Â ¹× ÃÊ±âÈ­
+    // ï¿½Ö¹Î¹ï¿½È£ ï¿½Ô·ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½È­
     void enterResidentID();
 
-    // ³ªÀÌ °è»ê
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     int calculateAge() const;
 
-    // ÁÖ°£/¾ß°£ Æ¼ÄÏ ±¸ºÐ
+    // ï¿½Ö°ï¿½/ï¿½ß°ï¿½ Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void determineTicketType();
 
-    // ÁÖ¹® Á¤º¸ Ãâ·Â
+    // ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     void printOrderDetails() const;
 
-    // ÇÊ¿äÇÑ ´Ù¸¥ ¸â¹ö ÇÔ¼öµé...
+    // ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½...
 };
 
 
@@ -344,7 +344,7 @@ int main() {
     ticketOrder.determineTicketType();
     ticketOrder.printOrderDetails();
 
-    // Ãß°¡ÀûÀÎ ÀÛ¾÷ ¼öÇà...
+    // ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½...
 
     return 0;
 }
