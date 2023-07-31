@@ -76,21 +76,21 @@ int TicketOrder::AgeCalculation() {
         }
     }
     else {
-        if (ticket_price = daytime_price) {
+        if (ticket_price = nighttime_price) {
             if (age_yy >= 0 && age_yy <= 2) {
-                ticket_price = daytime_age_2;
+                ticket_price = nighttime_age_2;
             }
             else if (age_yy > 2 && age_yy <= 12) {
-                ticket_price = daytime_age_12;
+                ticket_price = nighttime_age_12;
             }
             else if (age_yy > 12 && age_yy <= 18) {
-                ticket_price = daytime_age_18;
+                ticket_price = nighttime_age_18;
             }
             else if (age_yy > 18 && age_yy <= 64) {
-                ticket_price = daytime_age_64;
+                ticket_price = nighttime_age_64;
             }
             else if (age_yy > 64) {
-                ticket_price = daytime_age_over;
+                ticket_price = nighttime_age_over;
             }
         }
     }
