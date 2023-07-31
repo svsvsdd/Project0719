@@ -26,11 +26,12 @@ public:
     void printOrderDetails() const;
 
 
-    int daytime_price,
+    int ticket_price, order_time, amount_ticket,
+        age, age_yyMMdd, age_yy;
+    
+    const int daytime_price,
         nighttime_price,
-
-        ticket_price, order_time, amount_ticket,
-        age, age_yyMMdd, age_yy,
+                
         daytime_age_2 = 0,
         daytime_age_12 = 44000,
         daytime_age_18 = 47000,
