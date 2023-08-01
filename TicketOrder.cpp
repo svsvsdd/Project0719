@@ -13,8 +13,8 @@ int TicketOrder::AgeCalculation() {
     // 7번째 자리 추출
     std::string seventh_digit = input_num.substr(6, 1);
 
-    std::cout << "1-6번째 자리: " << first_six_digits << std::endl;
-    std::cout << "7번째 자리: " << seventh_digit << std::endl;
+    //std::cout << "1-6번째 자리: " << first_six_digits << std::endl;
+    //std::cout << "7번째 자리: " << seventh_digit << std::endl;
 
 
     //int로 변환 std::stoi
@@ -39,8 +39,8 @@ int TicketOrder::AgeCalculation() {
     int yyMMdd_int = std::stoi(yyMMdd);
 
     // 결과 출력
-    std::cout << "yyMMdd: " << yyMMdd << std::endl;
-    std::cout << "yyMMdd (int): " << yyMMdd_int << std::endl;
+    //std::cout << "yyMMdd: " << yyMMdd << std::endl;
+    //std::cout << "yyMMdd (int): " << yyMMdd_int << std::endl;
 
     if (age_calc_7th == 1 || age_calc_7th == 2) {
         age_yyMMdd = 1000000 + yyMMdd_int - age_calc_1to6;
@@ -55,7 +55,7 @@ int TicketOrder::AgeCalculation() {
 
     int age_yy = std::stoi(age_yy_str); // int로 변환
 
-    std::cout << "age: " << age_yy << std::endl;
+    std::cout << "나이: " << age_yy << std::endl;
 
     //age_yy 범위 지정
     if (ticket_price = daytime_price) {
@@ -128,7 +128,7 @@ TicketOrder::TicketOrder() {
         if (input_num.length() == 13) {
             //age계산 함수 호출
             TicketOrder::AgeCalculation();
-            cout << "주민번호: " << input_num << endl;
+            //cout << "주민번호: " << input_num << endl;
             break;
         }
         else {
@@ -148,7 +148,7 @@ TicketOrder::TicketOrder() {
             //최종가격 계산   
             total_price = ticket_price * amount_ticket;
 
-            cout << ticket_price << endl;
+            //cout << ticket_price << endl;
 
             cout << total_price << endl;
             break;
@@ -174,7 +174,7 @@ TicketOrder::TicketOrder() {
             //우대사항 함수 
             discount_price = 1.0;
             total_price = total_price * discount_price;
-            cout << total_price << endl;
+            //cout << total_price << endl;
 
             break;
         }
@@ -183,7 +183,7 @@ TicketOrder::TicketOrder() {
             //우대사항 함수
             discount_price = 0.6;
             total_price = total_price * discount_price;
-            cout << total_price << endl;
+            //cout << total_price << endl;
 
             break;
         }
@@ -192,7 +192,7 @@ TicketOrder::TicketOrder() {
             //우대사항 함수
             discount_price = 0.5;
             total_price = total_price * discount_price;
-            cout << total_price << endl;
+            //cout << total_price << endl;
 
             break;
         }
@@ -201,7 +201,7 @@ TicketOrder::TicketOrder() {
             //우대사항 함수
             discount_price = 0.8;
             total_price = total_price * discount_price;
-            cout << total_price << endl;
+            //cout << total_price << endl;
 
             break;
         }
@@ -210,7 +210,7 @@ TicketOrder::TicketOrder() {
             //우대사항 함수
             discount_price = 0.85;
             total_price = total_price * discount_price;
-            cout << total_price << endl;
+            //cout << total_price << endl;
 
             break;
         }
@@ -222,7 +222,7 @@ TicketOrder::TicketOrder() {
 
 
     //최종 가격은 @@입니다
-    cout << "최종 가격은 " << total_price << "원" << endl;
+    cout << "최종 가격은 " << total_price << "원 입니다." << endl;
 
 
 
